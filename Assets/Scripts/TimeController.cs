@@ -40,6 +40,10 @@ public class TimeController : MonoBehaviour
     [SerializeField]
     private float maxMoonLightIntensity;
 
+    [SerializeField]
+    private GameObject sunMoonCenter;
+
+
     private DateTime currentTime;
 
     private TimeSpan sunriseTime;
@@ -59,11 +63,18 @@ public class TimeController : MonoBehaviour
         sunsetTime = TimeSpan.FromHours(sunsetHour);
     }
 
+    private void Awake()
+    {
+        sunLight.transform.LookAt(sunMoonCenter.transform);
+        moonLight.transform.LookAt(sunMoonCenter.transform);
+    }
+
     // Update is called once per frame
     void Update()
     {
         UpdateTimeOfDay();
-        RotateSun();
+        Rotate();
+        //RotateSun();
         UpdateLightSettings();
     }
 
@@ -77,7 +88,34 @@ public class TimeController : MonoBehaviour
         }
     }
 
-    private void  RotateSun()
+    private void Rotate()
+    {
+        float sunLightRotation;
+
+        if (currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime)
+        {
+            TimeSpan sunriseToSunsetDuration = CalculateTimeDifference(sunriseTime, sunsetTime);
+            TimeSpan timeSinceSunrise = CalculateTimeDifference(sunriseTime, currentTime.TimeOfDay);
+
+            double percentage = timeSinceSunrise.TotalMinutes / sunriseToSunsetDuration.TotalMinutes;
+
+            sunLightRotation = Mathf.Lerp(0, 180, (float)percentage);
+        }
+        else
+        {
+            TimeSpan sunsetToSunriseDuration = CalculateTimeDifference(sunsetTime, sunriseTime);
+            TimeSpan timeSinceSunset = CalculateTimeDifference(sunsetTime, currentTime.TimeOfDay);
+
+            double percentage = timeSinceSunset.TotalMinutes / sunsetToSunriseDuration.TotalMinutes;
+
+            sunLightRotation = Mathf.Lerp(180, 360, (float)percentage);
+        }
+
+        sunMoonCenter.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right);
+
+    }
+
+    private void RotateSun()
     {
         float sunLightRotation;
 
