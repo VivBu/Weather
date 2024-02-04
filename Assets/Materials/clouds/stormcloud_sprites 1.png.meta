@@ -1,0 +1,580 @@
+fileFormatVersion: 2
+guid: 3eba6741be938844cb6a1fcc1aa9538f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1683.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bc1a65fc8582747944b7da6a5e5787
+      internalID: -1371569787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1683.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6110f735a480bb649bffaae27555024c
+      internalID: -215517426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1683.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511a269844e48fc4286efe37ea9e0117
+      internalID: -341861479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1683.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a995ab49f52ab4b9ab48c156d72493
+      internalID: -759744739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1274.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569884b506086834aa4e7f16004c0d53
+      internalID: 1100850747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1274.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35cb445c7351974e8628d933559b383
+      internalID: 267172294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1274.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6fd11f3a1606c4286abbd6e712a70b
+      internalID: 828554738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1274.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ce3f3ae4875134eae966a9127b3c53
+      internalID: 982661911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 865.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39960e9398018464991f5932fa9afe71
+      internalID: 344020188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 865.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae17d10846d659499566f516edf74e3
+      internalID: 614287193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 865.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1700bb56ba93b884581d2119acf74a41
+      internalID: -1040291051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 865.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec78ee7489c29f498c3b80b9ddb178a
+      internalID: -172603872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a333218d57867f1479109c31d19055be
+      internalID: -1047810751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_13
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 456
+        width: 465
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda5ab2aa29857b41ae0f28776f3f55c
+      internalID: -1294437319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 456
+        width: 465
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6152d1d14570d44596d90aa57d46e25
+      internalID: 1458688146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_15
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 456.4
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3000a225fc04d40951b85246151f24
+      internalID: 1736078335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47.399994
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaba3d2a73b94024191a80f66f4fada2
+      internalID: -696399174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 47.399994
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4d09019df1df14d92dd6545bec15d9
+      internalID: 1548126277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 47.399994
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aefc4a00d836043978dbf8729136af
+      internalID: -2087260680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stormcloud_sprites 1_19
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 47.399994
+        width: 465
+        height: 364.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f062eeac2fc7149a7409a7eee5f7d8
+      internalID: -1059131528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      stormcloud_sprites 1_0: -1371569787
+      stormcloud_sprites 1_1: -215517426
+      stormcloud_sprites 1_10: -1040291051
+      stormcloud_sprites 1_11: -172603872
+      stormcloud_sprites 1_12: -1047810751
+      stormcloud_sprites 1_13: -1294437319
+      stormcloud_sprites 1_14: 1458688146
+      stormcloud_sprites 1_15: 1736078335
+      stormcloud_sprites 1_16: -696399174
+      stormcloud_sprites 1_17: 1548126277
+      stormcloud_sprites 1_18: -2087260680
+      stormcloud_sprites 1_19: -1059131528
+      stormcloud_sprites 1_2: -341861479
+      stormcloud_sprites 1_3: -759744739
+      stormcloud_sprites 1_4: 1100850747
+      stormcloud_sprites 1_5: 267172294
+      stormcloud_sprites 1_6: 828554738
+      stormcloud_sprites 1_7: 982661911
+      stormcloud_sprites 1_8: 344020188
+      stormcloud_sprites 1_9: 614287193
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
