@@ -1,6 +1,8 @@
 using System;
-using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class DayNightController : MonoBehaviour
 {
@@ -47,6 +49,18 @@ public class DayNightController : MonoBehaviour
         set => _moonLight = value;
     }
 
+    public UIController UIController
+    {
+        get => _uiController;
+        set => _uiController = value;
+    }
+
+    public TextMeshProUGUI TextFieldCurrentTime
+    {
+        get => _textFieldCurrentTime;
+        set => _textFieldCurrentTime = value;
+    }
+
     // Serialized Fields
     [SerializeField]
     [Tooltip(PropertyGridTexts.TT_SUN_MOON_PROXY)]
@@ -76,10 +90,32 @@ public class DayNightController : MonoBehaviour
     [Tooltip(PropertyGridTexts.TT_MOON_LIGHT)]
     private Light _moonLight;
 
+    [SerializeField]
+    [Tooltip(PropertyGridTexts.TT_UI_CONTROLLER)]
+    private UIController _uiController;
+
+    [SerializeField]
+    [Tooltip(PropertyGridTexts.TT_TEXT_FIELD_CURRENT_TIME)]
+    private TextMeshProUGUI _textFieldCurrentTime;
+
+    [SerializeField]
+    [Tooltip(PropertyGridTexts.TT_DAY_SKY_CUBE_MAP)]
+    private Cubemap _daySkyCubeMap;
+
+    [SerializeField]
+    [Tooltip(PropertyGridTexts.TT_NIGHT_SKY_CUBE_MAP)]
+    private Cubemap _nightSkyCubeMap;
+
+    [SerializeField]
+    [Tooltip(PropertyGridTexts.TT_GLOBAL_VOLUME)]
+    private Volume _globalVolume;
+
     // fields
     private DateTime _currentTime;
     private TimeSpan _sunriseTime;
     private TimeSpan _sunsetTime;
+    private HDRISky _hdriSky;
+    private DayNightCycleStates _lastFrameState;
 
     // Start
     private void Start()
@@ -89,8 +125,14 @@ public class DayNightController : MonoBehaviour
         _sunriseTime = TimeSpan.FromHours(Convert.ToDouble(SunriseHour));
         _sunsetTime = TimeSpan.FromHours(Convert.ToDouble(SunsetHour));
 
+        // Setup sky boxes
+        SetupSkyBoxes();
+
         // Setup sun & moon rotation & direction
         SetupSunAndMoon();
+
+        // Setup dynamic UI updates
+        SetupUI();
     }
 
     // Update
@@ -98,6 +140,9 @@ public class DayNightController : MonoBehaviour
     {
         // Update the current time
         UpdateCurrentTime();
+
+        // Update sky box
+        UpdateSkyBoxes();
 
         // so we can update rotation accordingly
         UpdateProxyRotation();
@@ -109,7 +154,7 @@ public class DayNightController : MonoBehaviour
 
         // calculate the rotation depending on the time of day
         // if current time is during the day
-        if (_currentTime.TimeOfDay > _sunriseTime && _currentTime.TimeOfDay < _sunsetTime)
+        if (GetCurrentDayNightCycleState() == DayNightCycleStates.Day)
         {
             TimeSpan sunriseToSunsetDuration = GetTimeDiff(_sunriseTime, _sunsetTime);
             TimeSpan timeSinceSunrise = GetTimeDiff(_sunriseTime, _currentTime.TimeOfDay);
@@ -136,7 +181,32 @@ public class DayNightController : MonoBehaviour
     // Current time manipulation based off deltaTime & modifier
     private void UpdateCurrentTime()
     {
-        _currentTime.AddSeconds(Time.deltaTime * CycleSpeedModifier);
+        _currentTime = _currentTime.AddSeconds(Time.deltaTime * CycleSpeedModifier);
+    }
+
+    private void UpdateSkyBoxes()
+    {
+        var currentState = GetCurrentDayNightCycleState();
+
+        // if first frame
+        if (_lastFrameState == DayNightCycleStates.None)
+        {
+            var skyBox = currentState == DayNightCycleStates.Day ? _daySkyCubeMap : _nightSkyCubeMap;
+            var param = new CubemapParameter(skyBox, true);
+            _hdriSky.hdriSky.SetValue(param);
+        }
+        // else if this frame became day
+        else if (_lastFrameState == DayNightCycleStates.Night && currentState == DayNightCycleStates.Day)
+        {
+            _hdriSky.hdriSky.SetValue(new CubemapParameter(_daySkyCubeMap, true));
+        }
+        // else if this frame became night
+        else if (_lastFrameState == DayNightCycleStates.Day && currentState == DayNightCycleStates.Night)
+        {
+            _hdriSky.hdriSky.SetValue(new CubemapParameter(_nightSkyCubeMap, true));
+        }
+
+        _lastFrameState = currentState;
     }
 
     // Rotation Manipulation
@@ -145,6 +215,18 @@ public class DayNightController : MonoBehaviour
         // initially, make sure the sun as well as the moon are looking at the proxy (rotation center)
         foreach (var light in new[] { SunLight, MoonLight })
             light.transform.LookAt(SunMoonProxy.transform);
+    }
+
+    // setup UI via dynamic UI Controller
+    private void SetupUI()
+    {
+        // set up controller to display the current time each frame in the format HH:mm
+        _uiController.RegisterTextUpdate(_textFieldCurrentTime, () => _currentTime.ToString("HH:mm"), () => true);
+    }
+
+    private void SetupSkyBoxes() 
+    {
+        _globalVolume.sharedProfile.TryGet(out _hdriSky);
     }
 
     // calculates the time difference with respect to 24h format
@@ -159,4 +241,16 @@ public class DayNightController : MonoBehaviour
 
         return difference;
     }
+
+    private DayNightCycleStates GetCurrentDayNightCycleState()
+    {
+        return _currentTime.TimeOfDay > _sunriseTime && _currentTime.TimeOfDay < _sunsetTime ? DayNightCycleStates.Day : DayNightCycleStates.Night;
+    }
+}
+
+public enum DayNightCycleStates
+{
+    None = 0,
+    Day = 1,
+    Night = 2
 }
