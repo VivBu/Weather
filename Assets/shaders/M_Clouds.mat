@@ -168,7 +168,7 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
     - _CloudScale: 22.9
-    - _CloudsAlpha: -41.21
+    - _CloudsAlpha: 1
     - _CloudsPower: 1
     - _CloudsScale: 120
     - _CoatMask: 0
@@ -186,7 +186,7 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
-    - _DistortScale: 64.78
+    - _DistortScale: 64.7
     - _DoubleSidedEnable: 1
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 0
@@ -267,7 +267,7 @@ Material:
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
-    - _TransparentDepthPrepassEnable: 0
+    - _TransparentDepthPrepassEnable: 1
     - _TransparentSortPriority: 0
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
@@ -287,7 +287,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _CloudSpeed: {r: 0.02, g: 0, b: 0, a: 0}
-    - _CloudsColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudsColor: {r: 0.012554368, g: 0.012691442, b: 0.011148561, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: -8.695931e+30, g: -5.0949594e+31, b: -0.010710085, a: -0.0000000055696536}
     - _DistortSpeed: {r: 0.01, g: 0, b: 0, a: 0}

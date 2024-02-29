@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # Ignore Large Assets that are only needed locally
 /[Aa]ssets/[Mm]aterials/[Ee]xtern/*
+
+# TerrainDemoScene Assets
+/[Aa]ssets/[Tt]errainDemoScene_HDRP/*
