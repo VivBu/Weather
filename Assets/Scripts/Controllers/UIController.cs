@@ -6,8 +6,27 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    public event EventHandler OptionsMenuToggled;    
+
+    public KeyCode OptionsMenuKey
+    {
+        get => _optionsMenuKey;
+        set => _optionsMenuKey = value;
+    }
+
+    public bool IsOptionsMenuOpened
+    {
+        get;
+        private set;
+    } = false;
 
     public ReadOnlyDictionary<TextMeshProUGUI, (Func<string>, Func<bool>)> TextUpdateMap { get; }
+
+    [SerializeField]
+    private KeyCode _optionsMenuKey = KeyCode.E;
+
+    [SerializeField]
+    private Canvas _optionsMenu;
 
     private readonly Dictionary<TextMeshProUGUI, (Func<string>, Func<bool>)> _textUpdateMap = new();
 
@@ -16,10 +35,47 @@ public class UIController : MonoBehaviour
         TextUpdateMap = new(_textUpdateMap);
     }
 
-    // Update is called once per frame
+    private void Awake() {
+
+        // initially, the options menu is not showed & cursor is hidden
+       _optionsMenu.gameObject.SetActive(false);
+       Cursor.visible = false;
+       Cursor.lockState = CursorLockMode.Locked;
+       OptionsMenuToggled?.Invoke(this, EventArgs.Empty);
+    }
+
     void Update()
     {
-        foreach (var pair in TextUpdateMap)   
+        ProcessTextUpdates();
+        ProcessGameOptions();
+    }
+
+    private void ProcessGameOptions()
+    {
+        if (Input.GetKeyDown(_optionsMenuKey))
+        {
+            IsOptionsMenuOpened = !_optionsMenu.gameObject.activeSelf;
+
+            _optionsMenu.gameObject.SetActive(IsOptionsMenuOpened);
+            Cursor.visible = IsOptionsMenuOpened;
+            Cursor.lockState = IsOptionsMenuOpened ? CursorLockMode.None : CursorLockMode.Locked;
+            OptionsMenuToggled?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void RegisterTextUpdate(TextMeshProUGUI textMeshPro, Func<string> updateDelegate, Func<bool> needsUpdate)
+    {
+        _textUpdateMap.Add(textMeshPro, (updateDelegate, needsUpdate));
+    }
+
+    public void UnregisterTextUpdate(TextMeshProUGUI textMeshPro)
+    {
+        _textUpdateMap.Remove(textMeshPro);
+    }
+
+    private void ProcessTextUpdates()
+    {
+        foreach (var pair in TextUpdateMap)
         {
             var needsUpdateFunc = pair.Value.Item2;
 
@@ -34,15 +90,5 @@ public class UIController : MonoBehaviour
                 textMeshPro.text = newValue;
             }
         }
-    }
-
-    public void RegisterTextUpdate(TextMeshProUGUI textMeshPro, Func<string> updateDelegate, Func<bool> needsUpdate)
-    {
-        _textUpdateMap.Add(textMeshPro, (updateDelegate, needsUpdate));
-    }
-
-    public void UnregisterTextUpdate(TextMeshProUGUI textMeshPro)
-    {
-        _textUpdateMap.Remove(textMeshPro);
     }
 }
