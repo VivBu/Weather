@@ -168,7 +168,7 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
     - _CloudScale: 25.53
-    - _CloudsAlpha: 1.3
+    - _CloudsAlpha: 2
     - _CloudsPower: 69.37
     - _CloudsScale: 120
     - _CoatMask: 0
